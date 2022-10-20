@@ -3,17 +3,17 @@ import React, { useState } from "react";
 const Shop = () => {
   const item1 = {
     name: "Generic Item",
-    price: "19,99$",
+    price: 19.99,
   };
 
   const item2 = {
     name: "Less Generic Item",
-    price: "24,99$",
+    price: 24.99,
   };
 
   const item3 = {
     name: "Not a Generic Item",
-    price: "29,99$",
+    price: 29.99,
   };
 
   const addItemToCart = (item, quant) => {
@@ -40,7 +40,7 @@ const Shop = () => {
   const listItems = itemList.map((item) => (
     <div>
       <li>{item.name}</li>
-      <li>{item.price}</li>
+      <li>{item.price + "$"}</li>
       <label htmlFor="numberOfItems">How many?</label>
       <input
         type="number"
@@ -63,7 +63,9 @@ const Shop = () => {
 
   return (
     <div>
-      <div>Shopping Cart: {shopCart.length}</div>
+      <div>
+        Shopping Cart: {shopCart.length} <button>Checkout</button>
+      </div>
       <div>{listItems}</div>
     </div>
   );
