@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Shop = () => {
   const item1 = {
@@ -18,7 +18,7 @@ const Shop = () => {
 
   const addItemToCart = (item, quant) => {
     if (quant < 1) {
-      alert("Quantity must be greater than 1");
+      alert("Quantity must be equal to or greater than 1");
       return;
     }
     let itemToCart = {
@@ -34,8 +34,11 @@ const Shop = () => {
     setQuantity(e.target.value);
   };
 
+  useEffect(() => {}, []);
+
   const [itemList, setItemList] = useState([item1, item2, item3]);
-  const [quantity, setQuantity] = useState(0);
+  const [quantity, setQuantity] = useState(1);
+  const [shopCart, setShopCart] = useState([]);
 
   const listItems = itemList.map((item) => (
     <div>
@@ -58,8 +61,6 @@ const Shop = () => {
       </button>
     </div>
   ));
-
-  const [shopCart, setShopCart] = useState([]);
 
   return (
     <div>
