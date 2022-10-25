@@ -21,20 +21,45 @@ const Shop = () => {
       alert("Quantity must be equal to or greater than 1");
       return;
     }
-    let itemToCart = {
-      cartItem: item,
-      itemQuantity: quant,
-    };
-    setShopCart(shopCart.concat(itemToCart));
-    setQuantity(0);
+    if (ItemIsInCart(item) === false) {
+      let itemToCart = {
+        cartItem: item,
+        itemQuantity: quant,
+      };
+      setShopCart(shopCart.concat(itemToCart));
+    } else {
+      updateCart(item, quant);
+    }
+    setQuantity(1);
+  };
+
+  const updateCart = (item, quant) => {
+    const newShopCart = shopCart.map((currentCartItem) => {
+      if (item === currentCartItem.cartItem) {
+        const currentQuant = currentCartItem.itemQuantity;
+        return {
+          cartItem: item,
+          itemQuantity: +currentQuant + +quant,
+        };
+      }
+      return currentCartItem;
+    });
+    setShopCart(newShopCart);
+  };
+
+  const ItemIsInCart = (item) => {
+    if (shopCart.length === 0) return false;
+    else {
+      for (let i = 0; i < shopCart.length; i++) {
+        if (shopCart[i].cartItem === item) return true;
+      }
+    }
+    return false;
   };
 
   const handleQuantityChange = (e) => {
-    if (e.target.value < 1) return;
     setQuantity(e.target.value);
   };
-
-  useEffect(() => {}, []);
 
   const [itemList, setItemList] = useState([item1, item2, item3]);
   const [quantity, setQuantity] = useState(1);
