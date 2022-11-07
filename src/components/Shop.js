@@ -32,7 +32,6 @@ const Shop = () => {
     } else {
       updateCart(item, quant);
     }
-    orderTotal();
     setQuantity(1);
   };
 
@@ -48,7 +47,6 @@ const Shop = () => {
       return currentCartItem;
     });
     setShopCart(newShopCart);
-    orderTotal();
   };
 
   const ItemIsInCart = (item) => {
@@ -65,10 +63,16 @@ const Shop = () => {
     setQuantity(e.target.value);
   };
 
+  const totalItemsInCart = () => {
+    const total = shopCart.reduce((a, b) => a + b.itemQuantity, 0);
+    setTotalItems(total);
+  };
+
   const [itemList, setItemList] = useState([item1, item2, item3]);
   const [quantity, setQuantity] = useState(1);
   const [shopCart, setShopCart] = useState([]);
   const [total, setTotal] = useState(0);
+  const [totalItems, setTotalItems] = useState(0);
 
   const orderTotal = () => {
     let sum = 0;
@@ -80,6 +84,7 @@ const Shop = () => {
 
   useEffect(() => {
     orderTotal();
+    totalItemsInCart();
   }, [shopCart]);
 
   const listItems = itemList.map((item) => (
@@ -107,7 +112,7 @@ const Shop = () => {
   return (
     <div>
       <div>
-        Shopping Cart: {shopCart.length}
+        Shopping Cart: {totalItems}
         Order Total: {total.toFixed(2)}$<button>Checkout</button>
       </div>
       <div>{listItems}</div>
