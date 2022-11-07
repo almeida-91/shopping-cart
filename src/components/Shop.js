@@ -17,6 +17,7 @@ const Shop = () => {
   };
 
   const addItemToCart = (item, quant) => {
+    let newShopCart = [...shopCart];
     if (quant < 1) {
       alert("Quantity must be equal to or greater than 1");
       return;
@@ -26,10 +27,12 @@ const Shop = () => {
         cartItem: item,
         itemQuantity: quant,
       };
-      setShopCart(shopCart.concat(itemToCart));
+      newShopCart.push(itemToCart);
+      setShopCart(newShopCart);
     } else {
       updateCart(item, quant);
     }
+    orderTotal();
     setQuantity(1);
   };
 
@@ -45,6 +48,7 @@ const Shop = () => {
       return currentCartItem;
     });
     setShopCart(newShopCart);
+    orderTotal();
   };
 
   const ItemIsInCart = (item) => {
@@ -64,6 +68,19 @@ const Shop = () => {
   const [itemList, setItemList] = useState([item1, item2, item3]);
   const [quantity, setQuantity] = useState(1);
   const [shopCart, setShopCart] = useState([]);
+  const [total, setTotal] = useState(0);
+
+  const orderTotal = () => {
+    let sum = 0;
+    for (let i = 0; i < shopCart.length; i++) {
+      sum += shopCart[i].cartItem.price * shopCart[i].itemQuantity;
+    }
+    setTotal(sum);
+  };
+
+  useEffect(() => {
+    orderTotal();
+  }, [shopCart]);
 
   const listItems = itemList.map((item) => (
     <div>
@@ -90,7 +107,8 @@ const Shop = () => {
   return (
     <div>
       <div>
-        Shopping Cart: {shopCart.length} <button>Checkout</button>
+        Shopping Cart: {shopCart.length}
+        Order Total: {total.toFixed(2)}$<button>Checkout</button>
       </div>
       <div>{listItems}</div>
     </div>
