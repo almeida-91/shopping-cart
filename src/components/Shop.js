@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "./shop.css";
 
 const Shop = () => {
   const item1 = {
@@ -88,7 +89,7 @@ const Shop = () => {
   }, [shopCart]);
 
   const listItems = itemList.map((item) => (
-    <div>
+    <div className="item">
       <li>{item.name}</li>
       <li>{item.price + "$"}</li>
       <label htmlFor="numberOfItems">How many?</label>
@@ -117,7 +118,7 @@ const Shop = () => {
         Shopping Cart: {totalItems}
         Order Total: {total.toFixed(2)}$<button>Checkout</button>
       </div>
-      <div>{listItems}</div>
+      <div className="itemList">{listItems}</div>
     </div>
   );
 };
