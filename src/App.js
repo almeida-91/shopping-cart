@@ -1,13 +1,14 @@
 import React from "react";
 import RouteSwitch from "./components/RouteSwitch";
 import "./app.css";
-import gitIcon from "./components/images/github.png";
+import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div>
+    <div className="main">
       <h1 className="header"> Generic Shop</h1>
       <RouteSwitch />
+      <Footer />
     </div>
   );
 }

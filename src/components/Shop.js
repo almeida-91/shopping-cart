@@ -97,7 +97,9 @@ const Shop = () => {
         name="numberOfItems"
         pattern="[1-9]"
         defaultValue={1}
+        min="1"
         onChange={handleQuantityChange}
+        value={quantity}
       ></input>
       <button
         onClick={() => {

@@ -1,17 +1,30 @@
 .linkContainer {
+    font-family: sans-serif;
     display: flex;
-    background-color: black;
+    background-color: rgb(176, 141, 0);
     padding: 10px;
-    justify-content: space-around;
-    width: 50%;
-    margin: auto;
-    border-radius: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.linkContainer div {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .linkContainer a {
     text-decoration: none;
     color: white;
     font-weight: 700;
+}
+
+.linkContainer img {
+    height: 35px;
+    width: auto;
+    margin: 0;
 }
 
 .filter-white{

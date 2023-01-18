@@ -9,10 +9,14 @@ const RouteSwitch = () => {
   return (
     <BrowserRouter>
       <div className="linkContainer">
-        <img src={homeIcon} alt="home icon" className="filter-white" />
-        <Link to={"/"}>Home</Link>
-        <img src={storeIcon} alt="store icon" className="filter-white" />
-        <Link to={"/shop"}>Shop </Link>
+        <div>
+          <img src={homeIcon} alt="home icon" className="filter-white" />
+          <Link to={"/"}>Home</Link>
+        </div>
+        <div>
+          <img src={storeIcon} alt="store icon" className="filter-white" />
+          <Link to={"/shop"}>Shop </Link>
+        </div>
       </div>
       <Routes>
         <Route path="/" element={<HomePage />} />
