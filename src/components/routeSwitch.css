@@ -1,0 +1,19 @@
+.linkContainer {
+    display: flex;
+    background-color: black;
+    padding: 10px;
+    justify-content: space-around;
+    width: 50%;
+    margin: auto;
+    border-radius: 10px;
+}
+
+.linkContainer a {
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+}
+
+.filter-white{
+    filter: invert(96%) sepia(87%) saturate(2%) hue-rotate(334deg) brightness(110%) contrast(100%);
+}

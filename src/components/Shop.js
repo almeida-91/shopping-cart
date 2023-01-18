@@ -64,7 +64,7 @@ const Shop = () => {
   };
 
   const totalItemsInCart = () => {
-    const total = shopCart.reduce((a, b) => a + b.itemQuantity, 0);
+    const total = shopCart.reduce((a, b) => a + +b.itemQuantity, 0);
     setTotalItems(total);
   };
 
@@ -77,7 +77,7 @@ const Shop = () => {
   const orderTotal = () => {
     let sum = 0;
     for (let i = 0; i < shopCart.length; i++) {
-      sum += shopCart[i].cartItem.price * shopCart[i].itemQuantity;
+      sum += +shopCart[i].cartItem.price * +shopCart[i].itemQuantity;
     }
     setTotal(sum);
   };

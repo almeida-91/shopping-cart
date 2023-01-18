@@ -56,7 +56,7 @@ describe("Add single item to cart twice", () => {
     const buttons = screen.getAllByRole("button", { name: /add to cart/i });
     userEvent.click(buttons[0]);
     userEvent.click(buttons[0]);
-    const shoppingCartElement = screen.getByText(/Shopping Cart: 1/i);
+    const shoppingCartElement = screen.getByText(/Shopping Cart: 2/i);
     expect(shoppingCartElement).toBeInTheDocument();
   });
 });
@@ -69,7 +69,7 @@ describe("Add two items to cart twice", () => {
     userEvent.click(buttons[0]);
     userEvent.click(buttons[1]);
     userEvent.click(buttons[1]);
-    const shoppingCartElement = screen.getByText(/Shopping Cart: 2/i);
+    const shoppingCartElement = screen.getByText(/Shopping Cart: 4/i);
     expect(shoppingCartElement).toBeInTheDocument();
   });
 });
@@ -84,7 +84,7 @@ describe("Add three items to cart twice", () => {
     userEvent.click(buttons[1]);
     userEvent.click(buttons[2]);
     userEvent.click(buttons[2]);
-    const shoppingCartElement = screen.getByText(/Shopping Cart: 3/i);
+    const shoppingCartElement = screen.getByText(/Shopping Cart: 6/i);
     expect(shoppingCartElement).toBeInTheDocument();
   });
 });

@@ -1,0 +1,17 @@
+p {
+    margin: auto;
+    margin-top: 20px;
+    width: 80%;
+}
+
+img {
+    height: 50%;
+    width: 50%;
+    margin: 20px
+}
+
+.homeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
