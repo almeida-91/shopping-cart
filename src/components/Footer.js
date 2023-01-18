@@ -9,8 +9,8 @@ const Footer = () => {
     <div className="footer">
       <p>
         Developed by <a href="https://github.com/almeida-91">Almeida-91</a>
-        <img src={gitIcon} alt="GitHub Icon" />
       </p>
+      <img src={gitIcon} alt="GitHub Icon" />
     </div>
   );
 };

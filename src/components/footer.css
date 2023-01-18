@@ -7,11 +7,23 @@
 .footer {
     display: flex;
     align-items: center;
-    justify-content: center;
     background-color: gray;
     margin-top: auto;
+    justify-content: flex-end;
+    width: fit-content;
+    padding-top: 3px;
+    padding-right: 3px;
+    border-top-right-radius: 10px;
+    color: white;
+    
 }
 
 .footer p {
     margin: 0;
+    width: fit-content;
+    font-size: small;
+}
+
+.footer a {
+    color: white;
 }
