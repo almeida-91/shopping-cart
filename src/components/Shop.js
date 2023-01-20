@@ -60,10 +60,6 @@ const Shop = () => {
     return false;
   };
 
-  const handleQuantityChange = (e) => {
-    setQuantity(e.target.value);
-  };
-
   const totalItemsInCart = () => {
     const total = shopCart.reduce((a, b) => a + +b.itemQuantity, 0);
     setTotalItems(total);
@@ -88,27 +84,32 @@ const Shop = () => {
     totalItemsInCart();
   }, [shopCart]);
 
-  const listItems = itemList.map((item) => (
-    <div className="item">
-      <li>{item.name}</li>
-      <li>{item.price + "$"}</li>
-      <label htmlFor="numberOfItems">How many?</label>
-      <input
-        type="number"
-        name="numberOfItems"
-        pattern="[1-9]"
-        defaultValue={1}
-        min="1"
-        onChange={handleQuantityChange}
-        value={quantity}
-      ></input>
-      <button
-        onClick={() => {
-          addItemToCart(item, quantity);
-        }}
-      >
-        Add to cart
-      </button>
+  const listItems = itemList.map((item, index) => (
+    <div className="item" key={index}>
+      <p>{item.name}</p>
+      <p>Price: {item.price + "$"}</p>
+      <div>
+        <form
+          onSubmit={(event) => {
+            event.preventDefault();
+            addItemToCart(item, quantity);
+            setQuantity(1);
+            event.target.reset();
+          }}
+        >
+          <input
+            type="number"
+            name="numberOfItems"
+            pattern="[1-9]"
+            min="1"
+            defaultValue={quantity}
+            onChange={(e) => {
+              setQuantity(e.target.value);
+            }}
+          ></input>
+          <button type="submit">Purchase</button>
+        </form>
+      </div>
     </div>
   ));
 
