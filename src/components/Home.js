@@ -7,7 +7,7 @@ const HomePage = () => {
   homeImg.src = image;
   return (
     <div className="homeContainer">
-      <p>
+      <p className="heroText">
         Consetetur justo amet est aliquyam at sanctus tempor diam accusam vero,
         ut invidunt stet elitr amet est labore. Rebum erat tempor eirmod sit
         diam, eirmod ipsum labore sed dolore voluptua. Diam sed stet ipsum

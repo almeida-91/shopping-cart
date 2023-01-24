@@ -5,16 +5,22 @@ const Shop = () => {
   const item1 = {
     name: "Generic Item",
     price: 19.99,
+    picture:
+      "https://assets.onegoodthingbyjillee.com/2015/04/8tbmzDji-Generic-vs-Brand-name-8.jpg",
   };
 
   const item2 = {
     name: "Less Generic Item",
     price: 24.99,
+    picture:
+      "https://assets.onegoodthingbyjillee.com/2015/04/ZburNUFR-generic.jpg",
   };
 
   const item3 = {
     name: "Not a Generic Item",
     price: 29.99,
+    picture:
+      "https://assets.onegoodthingbyjillee.com/2015/04/u2k9KD2o-Generic-vs-Brand-name-7.jpg",
   };
 
   const addItemToCart = (item, quant) => {
@@ -87,7 +93,12 @@ const Shop = () => {
   const listItems = itemList.map((item, index) => (
     <div className="item" key={index}>
       <p>{item.name}</p>
-      <p>Price: {item.price + "$"}</p>
+      <p className="priceText">Price: {item.price + "$"}</p>
+      <img
+        className="productImg"
+        src={item.picture}
+        alt={item.name + " picture"}
+      />
       <div>
         <form
           onSubmit={(event) => {
@@ -97,27 +108,31 @@ const Shop = () => {
             event.target.reset();
           }}
         >
-          <input
-            type="number"
-            name="numberOfItems"
-            pattern="[1-9]"
-            min="1"
-            defaultValue={quantity}
-            onChange={(e) => {
-              setQuantity(e.target.value);
-            }}
-          ></input>
-          <button type="submit">Purchase</button>
+          <div className="quantBar">
+            <input
+              type="number"
+              name="numberOfItems"
+              pattern="[1-9]"
+              min="1"
+              defaultValue={quantity}
+              onChange={(e) => {
+                setQuantity(e.target.value);
+              }}
+            ></input>
+            <button type="submit">Purchase</button>
+          </div>
         </form>
       </div>
     </div>
   ));
 
   return (
-    <div>
-      <div>
-        Shopping Cart: {totalItems}
-        Order Total: {total.toFixed(2)}$<button>Checkout</button>
+    <div className="shopContainer">
+      <div className="cartBar">
+        <span>Shopping Cart: {totalItems}</span>
+        <span>
+          Order Total: {total.toFixed(2)}$<button>Checkout</button>
+        </span>
       </div>
       <div className="itemList">{listItems}</div>
     </div>
