@@ -71,7 +71,7 @@ const Shop = () => {
     setTotalItems(total);
   };
 
-  const [itemList, setItemList] = useState([item1, item2, item3]);
+  const [itemList] = useState([item1, item2, item3]);
   const [quantity, setQuantity] = useState(1);
   const [shopCart, setShopCart] = useState([]);
   const [total, setTotal] = useState(0);
@@ -88,17 +88,17 @@ const Shop = () => {
   useEffect(() => {
     orderTotal();
     totalItemsInCart();
-  }, [shopCart]);
+  });
 
   const listItems = itemList.map((item, index) => (
     <div className="item" key={index}>
       <p>{item.name}</p>
-      <p className="priceText">Price: {item.price + "$"}</p>
       <img
         className="productImg"
         src={item.picture}
         alt={item.name + " picture"}
       />
+      <p className="priceText">Price: {item.price + "$"}</p>
       <div>
         <form
           onSubmit={(event) => {

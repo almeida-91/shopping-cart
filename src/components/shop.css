@@ -13,13 +13,18 @@
 }
 
 .item {
-    width: 250px;
     background-color: gray;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 5px;
+    opacity: 50%;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.item:hover {
+    opacity: 100%;
 }
 
 .item input {

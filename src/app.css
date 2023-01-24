@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&display=swap');
 
 *{
     box-sizing: border-box;
@@ -21,6 +21,7 @@ body {
     flex-direction: column;
     width: auto;
     height: 100vh;
+    background-color: #e5e5f7;
 }
 
 .header {
@@ -35,4 +36,5 @@ body {
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
     color: white;
+    font-family: 'Mountains of Christmas', cursive;
 }

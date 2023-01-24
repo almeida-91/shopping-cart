@@ -19,4 +19,12 @@ img {
     border-radius: 10px;
     margin: 20px;
     color: white;
+    background-image: linear-gradient(rgba(0,0,0,60%), rgba(0,0,0,60%)), url("./images/mike-petrucci-c9FQyqIECds-unsplash.jpg");
+    background-size: cover;
+    height: 100%;
+}
+
+.pictureCredit {
+    align-self: flex-end;
+    margin-right: 10px;
 }
