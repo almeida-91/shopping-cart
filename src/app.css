@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&family=Open+Sans:wght@300&display=swap');
 
 *{
     box-sizing: border-box;
@@ -6,17 +6,17 @@
 
 html,
 body {
-    font-family: sans-serif;
+    font-family: 'Open Sans', sans-serif;
     background-color: silver;
     padding: 0;
     margin: 0;
     display: flex;
     flex-direction: column;
     height: 100vh;
-    max-height: 100vh;
 }
 
 .main {
+    background-size: cover;
     display: flex;
     flex-direction: column;
     width: auto;
@@ -28,13 +28,12 @@ body {
     display: flex;
     justify-content: center;
     align-self: center;
-    background-color: rgb(176, 141, 0);
+    background-color: rgb(255, 0, 0);
     margin: 0;
     width: fit-content;
     padding: 15px;
-    margin-top: 5px;
-    border-top-right-radius: 5px;
-    border-top-left-radius: 5px;
+    margin: 15px;
+    border-radius: 50px;
     color: white;
     font-family: 'Mountains of Christmas', cursive;
 }

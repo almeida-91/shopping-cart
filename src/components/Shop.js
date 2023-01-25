@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from "react";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+
 import "./shop.css";
 
 const Shop = () => {
@@ -7,6 +10,7 @@ const Shop = () => {
     price: 19.99,
     picture:
       "https://assets.onegoodthingbyjillee.com/2015/04/8tbmzDji-Generic-vs-Brand-name-8.jpg",
+    description: "Ideal for poor people",
   };
 
   const item2 = {
@@ -14,6 +18,7 @@ const Shop = () => {
     price: 24.99,
     picture:
       "https://assets.onegoodthingbyjillee.com/2015/04/ZburNUFR-generic.jpg",
+    description: "Ideal for the middle class",
   };
 
   const item3 = {
@@ -21,6 +26,7 @@ const Shop = () => {
     price: 29.99,
     picture:
       "https://assets.onegoodthingbyjillee.com/2015/04/u2k9KD2o-Generic-vs-Brand-name-7.jpg",
+    description: "Ideal for the rich people",
   };
 
   const addItemToCart = (item, quant) => {
@@ -98,6 +104,7 @@ const Shop = () => {
         src={item.picture}
         alt={item.name + " picture"}
       />
+      <div className="itemDescription">{item.description}</div>
       <p className="priceText">Price: {item.price + "$"}</p>
       <div>
         <form
@@ -119,7 +126,10 @@ const Shop = () => {
                 setQuantity(e.target.value);
               }}
             ></input>
-            <button type="submit">Purchase</button>
+            <button type="submit">
+              <AddShoppingCartIcon />
+              <span>Purchase</span>
+            </button>
           </div>
         </form>
       </div>
@@ -129,10 +139,12 @@ const Shop = () => {
   return (
     <div className="shopContainer">
       <div className="cartBar">
-        <span>Shopping Cart: {totalItems}</span>
-        <span>
-          Order Total: {total.toFixed(2)}$<button>Checkout</button>
-        </span>
+        <span>Order Total: {total.toFixed(2)}$</span>
+        <button>
+          <ShoppingCartIcon />
+          <span className="cartIconQuant">{totalItems}</span>{" "}
+          <span>Checkout</span>
+        </button>
       </div>
       <div className="itemList">{listItems}</div>
     </div>
