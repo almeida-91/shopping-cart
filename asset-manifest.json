@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/shopping-cart/static/css/main.f3ee890c.css",
-    "main.js": "/shopping-cart/static/js/main.26adfe4b.js",
+    "main.js": "/shopping-cart/static/js/main.6ad6a2cd.js",
     "static/media/mike-petrucci-c9FQyqIECds-unsplash.jpg": "/shopping-cart/static/media/mike-petrucci-c9FQyqIECds-unsplash.94e956c8bfab8370ebf4.jpg",
     "static/media/not_generic.jpg": "/shopping-cart/static/media/not_generic.76083eded4b2380f5c87.jpg",
     "static/media/generic.jpg": "/shopping-cart/static/media/generic.c152ec930565a22188c5.jpg",
@@ -10,10 +10,10 @@
     "index.html": "/shopping-cart/index.html",
     "static/media/home_FILL0_wght400_GRAD0_opsz48.svg": "/shopping-cart/static/media/home_FILL0_wght400_GRAD0_opsz48.07ed4b9aaa91b821b21dce69197360a4.svg",
     "main.f3ee890c.css.map": "/shopping-cart/static/css/main.f3ee890c.css.map",
-    "main.26adfe4b.js.map": "/shopping-cart/static/js/main.26adfe4b.js.map"
+    "main.6ad6a2cd.js.map": "/shopping-cart/static/js/main.6ad6a2cd.js.map"
   },
   "entrypoints": [
     "static/css/main.f3ee890c.css",
-    "static/js/main.26adfe4b.js"
+    "static/js/main.6ad6a2cd.js"
   ]
 }
