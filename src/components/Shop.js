@@ -57,7 +57,7 @@ const Shop = () => {
 
   const updateCart = (item, quant) => {
     const newShopCart = shopCart.map((currentCartItem) => {
-      if (item === currentCartItem.cartItem) {
+      if (item.name === currentCartItem.cartItem.name) {
         const currentQuant = currentCartItem.itemQuantity;
         return {
           cartItem: item,
@@ -73,7 +73,7 @@ const Shop = () => {
     if (shopCart.length === 0) return false;
     else {
       for (let i = 0; i < shopCart.length; i++) {
-        if (shopCart[i].cartItem === item) return true;
+        if (shopCart[i].cartItem.name === item.name) return true;
       }
     }
     return false;
@@ -89,7 +89,6 @@ const Shop = () => {
   const [shopCart, setShopCart] = useState(cart);
   const [total, setTotal] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
-
   const orderTotal = () => {
     let sum = 0;
     for (let i = 0; i < shopCart.length; i++) {

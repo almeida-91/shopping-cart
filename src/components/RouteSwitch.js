@@ -5,7 +5,6 @@ import Cart from "./Cart";
 import "./routeSwitch.css";
 import homeIcon from "./images/home_FILL0_wght400_GRAD0_opsz48.svg";
 import storeIcon from "./images/storefront_FILL0_wght400_GRAD0_opsz48.svg";
-import { cart } from "../App";
 
 const RouteSwitch = (props) => {
   return (
