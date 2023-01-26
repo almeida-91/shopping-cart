@@ -19,7 +19,7 @@ const Cart = () => {
   ));
   return (
     <div>
-      <div className="checkoutTable">
+      <div className="checkoutTable checkoutTop">
         <p>Item</p>
         <p>Quantity</p>
         <p>Price</p>
