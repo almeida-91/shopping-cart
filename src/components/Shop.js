@@ -1,11 +1,18 @@
+import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import genericImg from "./images/generic.jpg";
 import lessGenericImg from "./images/less_generic.jpg";
 import notGenericImg from "./images/not_generic.jpg";
-
 import "./shop.css";
+
+let cart = [];
+
+let savedCart = sessionStorage.getItem("currentcart");
+if (savedCart != null) {
+  cart = JSON.parse(savedCart);
+}
 
 const Shop = () => {
   const item1 = {
@@ -79,7 +86,7 @@ const Shop = () => {
 
   const [itemList] = useState([item1, item2, item3]);
   const [quantity, setQuantity] = useState(1);
-  const [shopCart, setShopCart] = useState([]);
+  const [shopCart, setShopCart] = useState(cart);
   const [total, setTotal] = useState(0);
   const [totalItems, setTotalItems] = useState(0);
 
@@ -93,6 +100,9 @@ const Shop = () => {
   useEffect(() => {
     orderTotal();
     totalItemsInCart();
+    cart = shopCart;
+    let str = JSON.stringify(cart);
+    sessionStorage.setItem("currentcart", str);
   });
 
   const listItems = itemList.map((item, index) => (
@@ -142,7 +152,9 @@ const Shop = () => {
         <button>
           <ShoppingCartIcon />
           <span className="cartIconQuant">{totalItems}</span>{" "}
-          <span>Checkout</span>
+          <Link to={"/cart"}>
+            <span>Checkout</span>
+          </Link>
         </button>
       </div>
       <div className="itemList">{listItems}</div>
