@@ -90,7 +90,6 @@ const Shop = () => {
     }
     setTotal(sum);
   };
-
   useEffect(() => {
     orderTotal();
     totalItemsInCart();
