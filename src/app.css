@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Michroma&family=Open+Sans:wght@300&display=swap');
 
 *{
     box-sizing: border-box;
@@ -41,6 +41,6 @@ body {
     margin: 15px;
     border-radius: 50px;
     color: white;
-    font-family: 'Fredericka the Great', cursive;
-    font-size: 50px;
+    font-family: 'Michroma', sans-serif;
+    font-size: 100px;
 }

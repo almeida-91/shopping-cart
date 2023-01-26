@@ -7,7 +7,7 @@ import storeIcon from "./images/storefront_FILL0_wght400_GRAD0_opsz48.svg";
 
 const RouteSwitch = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/">
       <div className="linkContainer">
         <div>
           <img src={homeIcon} alt="home icon" className="filter-white" />
