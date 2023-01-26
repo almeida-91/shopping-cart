@@ -2,6 +2,7 @@
     margin: auto;
     margin-top: 20px;
     width: 80%;
+    font-size: xx-large;
 }
 
 img {
@@ -31,4 +32,10 @@ img {
 
 .pictureCredit a {
     color: white;
+}
+
+@media screen and (max-width: 600px) {
+    .heroText {
+        font-size: medium;
+    }
 }

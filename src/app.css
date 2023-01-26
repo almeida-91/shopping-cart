@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Open+Sans:wght@300&display=swap');
 
 *{
     box-sizing: border-box;
@@ -12,7 +12,9 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
 }
 
 .main {
@@ -20,20 +22,25 @@ body {
     display: flex;
     flex-direction: column;
     width: auto;
-    height: 100vh;
     background-color: #e5e5f7;
+    background:url(./components/images/random_grey_variations.png) repeat;
+    position: relative;
+    min-height: 100vh;
+    height: 100%;
+    width: 100%;
+    top: 0;
 }
 
 .header {
     display: flex;
     justify-content: center;
     align-self: center;
-    background-color: rgb(255, 0, 0);
     margin: 0;
     width: fit-content;
     padding: 15px;
     margin: 15px;
     border-radius: 50px;
     color: white;
-    font-family: 'Mountains of Christmas', cursive;
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 50px;
 }
