@@ -1,0 +1,9 @@
+.checkoutTable {
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+}
+
+p {
+    width: 100%;
+}

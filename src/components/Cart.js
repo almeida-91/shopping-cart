@@ -1,4 +1,5 @@
 import React from "react";
+import "./cart.css";
 
 let cart = [];
 let str = sessionStorage.getItem("currentcart");
@@ -8,13 +9,25 @@ if (str != null) {
 }
 
 const Cart = () => {
-  console.log(cart);
   const cartItems = cart.map((item, index) => (
-    <div key={index}>
-      <p>{item.name}</p>
+    <div key={index} className="checkoutTable">
+      <p>{item.cartItem.name}</p>
+      <p>{item.itemQuantity}</p>
+      <p>{item.cartItem.price}</p>
+      <p>{item.itemQuantity * item.cartItem.price}</p>
     </div>
   ));
-  return <div>{cartItems}</div>;
+  return (
+    <div>
+      <div className="checkoutTable">
+        <p>Item</p>
+        <p>Quantity</p>
+        <p>Price</p>
+        <p>Total</p>
+      </div>
+      {cartItems}
+    </div>
+  );
 };
 
 export default Cart;
