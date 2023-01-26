@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import genericImg from "./images/generic.jpg";
+import lessGenericImg from "./images/less_generic.jpg";
+import notGenericImg from "./images/not_generic.jpg";
 
 import "./shop.css";
 
@@ -8,24 +11,21 @@ const Shop = () => {
   const item1 = {
     name: "Generic Item",
     price: 19.99,
-    picture:
-      "https://assets.onegoodthingbyjillee.com/2015/04/8tbmzDji-Generic-vs-Brand-name-8.jpg",
+    picture: genericImg,
     description: "Ideal for poor people",
   };
 
   const item2 = {
     name: "Less Generic Item",
     price: 24.99,
-    picture:
-      "https://assets.onegoodthingbyjillee.com/2015/04/ZburNUFR-generic.jpg",
+    picture: lessGenericImg,
     description: "Ideal for the middle class",
   };
 
   const item3 = {
     name: "Not a Generic Item",
     price: 29.99,
-    picture:
-      "https://assets.onegoodthingbyjillee.com/2015/04/u2k9KD2o-Generic-vs-Brand-name-7.jpg",
+    picture: notGenericImg,
     description: "Ideal for the rich people",
   };
 
