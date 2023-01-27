@@ -1,11 +1,10 @@
-import { getToPathname } from "@remix-run/router";
 import React from "react";
 import "./cart.css";
 
 const Cart = () => {
   let cart = [];
   let str = sessionStorage.getItem("currentcart");
-  console.log(str);
+
   if (str != null) {
     cart = JSON.parse(str);
   }
@@ -21,12 +20,12 @@ const Cart = () => {
       <p>{item.cartItem.name}</p>
       <p>{item.itemQuantity}</p>
       <p>{item.cartItem.price}$</p>
-      <p>{item.itemQuantity * item.cartItem.price}$</p>
+      <p>{(item.itemQuantity * item.cartItem.price).toFixed(2)}$</p>
     </div>
   ));
 
   let topRow;
-  if (cart.length == 0) {
+  if (cart.length === 0) {
     topRow = (
       <div className="emptyCart checkoutTop checkoutTable">
         <p>Your Cart is Empty.</p>
