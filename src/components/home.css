@@ -29,9 +29,10 @@ img {
     align-self: flex-end;
     margin-right: 10px;
     font-size: small;
+    color: white;
 }
 
-.pictureCredit a {
+a {
     color: white;
 }
 

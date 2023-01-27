@@ -107,7 +107,7 @@ const Shop = () => {
 
   const listItems = itemList.map((item, index) => (
     <div className="item" key={index}>
-      <p>{item.name}</p>
+      <p className="itemName">{item.name}</p>
       <img
         className="productImg"
         src={item.picture}
