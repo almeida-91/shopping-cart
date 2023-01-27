@@ -99,6 +99,7 @@ const Shop = () => {
   useEffect(() => {
     orderTotal();
     totalItemsInCart();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     cart = shopCart;
     let str = JSON.stringify(cart);
     sessionStorage.setItem("currentcart", str);
@@ -150,7 +151,9 @@ const Shop = () => {
         <span>Order Total: {total.toFixed(2)}$</span>
         <button>
           <ShoppingCartIcon />
-          <span className="cartIconQuant">{totalItems}</span>{" "}
+          <span className="cartIconQuant" data-testid="quant">
+            {totalItems}
+          </span>{" "}
           <Link className="link" to={"/cart"}>
             <span>Checkout</span>
           </Link>
