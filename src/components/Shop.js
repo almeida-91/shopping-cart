@@ -7,14 +7,14 @@ import lessGenericImg from "./images/less_generic.jpg";
 import notGenericImg from "./images/not_generic.jpg";
 import "./shop.css";
 
-let cart = [];
-
-let savedCart = sessionStorage.getItem("currentcart");
-if (savedCart != null) {
-  cart = JSON.parse(savedCart);
-}
-
 const Shop = () => {
+  let cart = [];
+
+  let savedCart = sessionStorage.getItem("currentcart");
+  if (savedCart != null) {
+    cart = JSON.parse(savedCart);
+  }
+
   const item1 = {
     name: "Generic Item",
     price: 19.99,
@@ -151,7 +151,7 @@ const Shop = () => {
         <button>
           <ShoppingCartIcon />
           <span className="cartIconQuant">{totalItems}</span>{" "}
-          <Link to={"/cart"}>
+          <Link className="link" to={"/cart"}>
             <span>Checkout</span>
           </Link>
         </button>
