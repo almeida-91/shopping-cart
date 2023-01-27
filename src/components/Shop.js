@@ -150,11 +150,11 @@ const Shop = () => {
       <div className="cartBar">
         <span>Order Total: {total.toFixed(2)}$</span>
         <button>
-          <ShoppingCartIcon />
-          <span className="cartIconQuant" data-testid="quant">
-            {totalItems}
-          </span>{" "}
           <Link className="link" to={"/cart"}>
+            <ShoppingCartIcon />
+            <span className="cartIconQuant" data-testid="quant">
+              {totalItems}
+            </span>{" "}
             <span>Checkout</span>
           </Link>
         </button>

@@ -27,11 +27,6 @@ p {
     border-bottom-right-radius: 5px;
 }
 
-.emptyCart {
-    font-size: 100px;
-    color: red;
-}
-
 .checkoutTop {
     margin-top: 20px;
 }
@@ -43,4 +38,19 @@ p {
 
 .totalRow p {
     text-align: none;
+}
+
+#emptyCart {
+    font-size: 60px;
+    color: red;
+}
+
+#emptyCart p {
+    text-align: center;
+}
+
+.payButton {
+    font-size: 25px;
+    margin: auto;
+    margin-top: 20px;
 }

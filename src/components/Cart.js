@@ -1,12 +1,16 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./cart.css";
 
 const Cart = () => {
   let cart = [];
   let str = sessionStorage.getItem("currentcart");
 
+  const [isCartEmpty, setIsCartEmpty] = useState(false);
+
   if (str != null) {
     cart = JSON.parse(str);
+  } else {
+    setIsCartEmpty(true);
   }
 
   let total = 0;
@@ -24,10 +28,21 @@ const Cart = () => {
     </div>
   ));
 
+  const pay = () => {
+    if (cart.length === 0) return;
+    cart = JSON.stringify([]);
+    sessionStorage.setItem("currentcart", cart);
+    cart = [];
+    setIsCartEmpty(true);
+    alert("thanks!");
+  };
+
+  let orderTotal;
   let topRow;
+
   if (cart.length === 0) {
     topRow = (
-      <div className="emptyCart checkoutTop checkoutTable">
+      <div id="emptyCart" className="checkoutTop checkoutTable">
         <p>Your Cart is Empty.</p>
       </div>
     );
@@ -40,16 +55,24 @@ const Cart = () => {
         <p>Total</p>
       </div>
     );
+    orderTotal = (
+      <div className="checkoutTable totalRow">
+        <p>Order Total:</p>
+        <p>{total}$</p>
+      </div>
+    );
   }
+
+  useEffect(() => {}, [cart, isCartEmpty]);
 
   return (
     <div>
       {topRow}
       {cartItems}
-      <div className="checkoutTable totalRow">
-        <p>Order Total:</p>
-        <p>{total}$</p>
-      </div>
+      {orderTotal}
+      <button className="payButton" onClick={pay}>
+        Pay
+      </button>
     </div>
   );
 };
